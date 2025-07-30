@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provyi - Location-Based Surveillance Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>provy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#interfaces">Interfaces</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#technical">Technical</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Surveillance at your fingertips</h1>
+                <p class="hero-subtitle">Connect Requesters with Spotters for location-based surveillance and photography tasks. Search locations, place pins on maps, and get professional photos/videos from anywhere with real-time tracking.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <i class="fab fa-apple"></i>
+                        Download on App Store
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                                        <div class="app-interface">
+                    <div class="app-header">
+                        <div class="status-bar"></div>
+                        <div class="nav-bar">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>provy</span>
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <span>Search for location...</span>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-search">Search</button>
+                            <button class="btn-camera"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <div class="task-buttons">
+                            <button class="btn-drag">Drag to move pin</button>
+                            <button class="btn-tasks">All Tasks: 2 ></button>
+                        </div>
+                        <div class="map-pin pin-1 available">
+                            <i class="fas fa-camera"></i>
+                            <div class="pin-label">Available</div>
+                        </div>
+                        <div class="map-pin pin-2 assigned">
+                            <i class="fas fa-video"></i>
+                            <div class="pin-label">Assigned</div>
+                        </div>
+                        <div class="map-pin pin-3 current">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Interactive Map System</h3>
+                    <p>Real-time location tracking with pin placement, directional indicators, and 15-meter proximity activation for precise task execution.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Advanced Camera Integration</h3>
+                    <p>Built-in camera with proximity activation, path-following for video tasks, and turn-by-turn navigation instructions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Stripe Payment System</h3>
+                    <p>Secure external payment flow with Stripe Connect for automatic payouts and $1 platform commission per task.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Real-Time Notifications</h3>
+                    <p>Firebase Cloud Messaging for instant push notifications on task assignments, payments, and second chance offers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Comprehensive review system with second-chance workflow for rejected submissions and task cancellation handling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Firebase Backend</h3>
+                    <p>Real-time database with Firestore, Cloud Functions, Storage, and Authentication for seamless user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>For Requesters (Blue Interface)</h3>
+                        <p>Create surveillance tasks by placing pins on a map, set task details, and pay securely via Stripe integration.</p>
+                        <div class="step-features">
+                            <span><i class="fas fa-check"></i> Photo ($2.99) or Video ($5.99)</span>
+                            <span><i class="fas fa-check"></i> Add notes and specify camera direction/angle</span>
+                            <span><i class="fas fa-check"></i> Review and approve submitted content</span>
+                            <span><i class="fas fa-check"></i> Offer "second chances" for rejected submissions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>For Spotters (Orange Interface)</h3>
+                        <p>Browse available tasks on a map, accept assignments, navigate to locations, and capture content for payment.</p>
+                        <div class="step-features">
+                            <span><i class="fas fa-check"></i> Earn $1.99 for photos ($1 platform commission)</span>
+                            <span><i class="fas fa-check"></i> Earn $4.99 for videos ($1 platform commission)</span>
+                            <span><i class="fas fa-check"></i> Automatic Stripe Connect payouts</span>
+                            <span><i class="fas fa-check"></i> Handle "second chance" opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Photo Tasks</h3>
+                        <div class="price">$2.99</div>
+                        <p>For requesters</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-camera"></i>
+                            <span>High-quality photo capture</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Location-based assignment</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Quick turnaround</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Video Tasks</h3>
+                        <div class="price">$5.99</div>
+                        <p>For requesters</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-video"></i>
+                            <span>HD video recording</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-route"></i>
+                            <span>Path-following capability</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-compass"></i>
+                            <span>Turn-by-turn navigation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Spotter Earnings</h3>
+                        <div class="price">$1.99 - $4.99</div>
+                        <p>Per completed task</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$1.99 for photos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$4.99 for videos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-percentage"></i>
+                            <span>$1 platform commission</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Interface Section -->
+    <section id="interfaces" class="interfaces">
+        <div class="container">
+            <h2>Dual Interface System</h2>
+            <p class="section-subtitle">Two distinct interfaces designed for different user types</p>
+            <div class="interface-grid">
+                <div class="interface-card requester">
+                    <div class="interface-header">
+                        <div class="interface-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>Requester Interface</h3>
+                        <p class="interface-color">Blue Theme</p>
+                    </div>
+                    <div class="interface-features">
+                        <div class="feature-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Create surveillance tasks by placing pins on maps</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Set task type: Photo ($2.99) or Video ($5.99)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-edit"></i>
+                            <span>Add notes and specify camera direction/angle</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Pay securely via Stripe integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Review and approve submitted content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="interface-card spotter">
+                    <div class="interface-header">
+                        <div class="interface-icon">
+                            <i class="fas fa-binoculars"></i>
+                        </div>
+                        <h3>Spotter Interface</h3>
+                        <p class="interface-color">Orange Theme</p>
+                    </div>
+                    <div class="interface-features">
+                        <div class="feature-item">
+                            <i class="fas fa-search"></i>
+                            <span>Browse available tasks on interactive maps</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-location-arrow"></i>
+                            <span>Accept tasks and navigate to locations</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>Capture photos/videos using integrated camera</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-upload"></i>
+                            <span>Submit content for review and approval</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Get paid via Stripe Connect ($1.99/$4.99 per task)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Features Section -->
+    <section id="technical" class="technical">
+        <div class="container">
+            <h2>Advanced Technical Features</h2>
+            <div class="technical-grid">
+                <div class="technical-card">
+                    <div class="technical-icon">
+                        <i class="fas fa-location-arrow"></i>
+                    </div>
+                    <h3>Location-Based Task System</h3>
+                    <ul>
+                        <li>Interactive map with real-time location tracking</li>
+                        <li>Pin placement with directional indicators (cones showing camera angle)</li>
+                        <li>Proximity-based camera activation (15-meter radius)</li>
+                        <li>Path drawing for video tasks with turn-by-turn instructions</li>
+                    </ul>
+                </div>
+                <div class="technical-card">
+                    <div class="technical-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Camera & Media System</h3>
+                    <ul>
+                        <li>Integrated camera for photo/video capture</li>
+                        <li>Video path following with navigation instructions</li>
+                        <li>Media upload to Firebase Storage</li>
+                        <li>Photo library integration for saving completed work</li>
+                    </ul>
+                </div>
+                <div class="technical-card">
+                    <div class="technical-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Task Management</h3>
+                    <ul>
+                        <li>Real-time task status tracking (Available → Assigned → In Progress → Submitted → Approved/Rejected)</li>
+                        <li>Task history and completion tracking</li>
+                        <li>Second chance workflow for rejected submissions</li>
+                        <li>Task cancellation and refund handling</li>
+                    </ul>
+                </div>
+                <div class="technical-card">
+                    <div class="technical-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technical Architecture</h3>
+                    <ul>
+                        <li>SwiftUI-based iOS app with MapKit integration</li>
+                        <li>Firebase Firestore for real-time database</li>
+                        <li>Firebase Cloud Functions for serverless backend</li>
+                        <li>Stripe integration with external payment flow (App Store compliant)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Download provy today and join the location-based surveillance revolution.</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-apple"></i>
+                        Download on App Store
+                    </a>
+                </div>
+                <div class="app-info">
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Real-time Updates</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Location-Based</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-eye"></i>
+                        <span>provy</span>
+                    </div>
+                    <p>Connecting requesters with spotters for location-based surveillance tasks.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="https://agajohna.github.io/provyi-privacy-policy/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 provy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
