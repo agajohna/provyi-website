@@ -211,7 +211,7 @@ body {
 
 .map-container {
     flex: 1;
-    background: url('11') center/cover;
+    background: url('11.jpg') center/cover;
     position: relative;
     height: calc(100% - 60px);
     overflow: hidden;
