@@ -328,64 +328,90 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 }); 
 
-// Screenshot Carousel Functionality
+// Dual Screenshot Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let slideInterval;
+    // Carousel configuration
+    const carousels = {
+        requester: {
+            slides: document.querySelectorAll('#requester-carousel .carousel-slide'),
+            dots: document.querySelectorAll('#requester-carousel .dot'),
+            currentSlide: 0,
+            interval: null
+        },
+        spotter: {
+            slides: document.querySelectorAll('#spotter-carousel .carousel-slide'),
+            dots: document.querySelectorAll('#spotter-carousel .dot'),
+            currentSlide: 0,
+            interval: null
+        }
+    };
 
-    // Function to show a specific slide
-    function showSlide(index) {
+    // Function to show a specific slide for a carousel
+    function showSlide(carouselType, index) {
+        const carousel = carousels[carouselType];
+        
         // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+        carousel.slides.forEach(slide => slide.classList.remove('active'));
+        carousel.dots.forEach(dot => dot.classList.remove('active'));
         
         // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
+        carousel.slides[index].classList.add('active');
+        carousel.dots[index].classList.add('active');
         
-        currentSlide = index;
+        carousel.currentSlide = index;
     }
 
-    // Function to go to next slide
-    function nextSlide() {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
+    // Function to go to next slide for a carousel
+    function nextSlide(carouselType) {
+        const carousel = carousels[carouselType];
+        const nextIndex = (carousel.currentSlide + 1) % carousel.slides.length;
+        showSlide(carouselType, nextIndex);
     }
 
-    // Function to go to previous slide
-    function prevSlide() {
-        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prevIndex);
+    // Function to go to previous slide for a carousel
+    function prevSlide(carouselType) {
+        const carousel = carousels[carouselType];
+        const prevIndex = (carousel.currentSlide - 1 + carousel.slides.length) % carousel.slides.length;
+        showSlide(carouselType, prevIndex);
     }
 
-    // Add click event listeners to dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            resetInterval();
+    // Add click event listeners to dots for both carousels
+    Object.keys(carousels).forEach(carouselType => {
+        const carousel = carousels[carouselType];
+        carousel.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(carouselType, index);
+                resetInterval(carouselType);
+            });
         });
     });
 
-    // Function to reset the auto-play interval
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
-    }
-
-    // Start auto-play
-    resetInterval();
-
-    // Pause auto-play on hover
-    const carousel = document.querySelector('.screenshot-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
+    // Function to reset the auto-play interval for a specific carousel
+    function resetInterval(carouselType) {
+        const carousel = carousels[carouselType];
+        clearInterval(carousel.interval);
         
-        carousel.addEventListener('mouseleave', () => {
-            resetInterval();
-        });
+        // Different intervals for each carousel to create visual variety
+        const interval = carouselType === 'requester' ? 3500 : 4000;
+        carousel.interval = setInterval(() => nextSlide(carouselType), interval);
     }
+
+    // Start auto-play for both carousels
+    Object.keys(carousels).forEach(carouselType => {
+        resetInterval(carouselType);
+    });
+
+    // Pause auto-play on hover for both carousels
+    Object.keys(carousels).forEach(carouselType => {
+        const carouselElement = document.getElementById(`${carouselType}-carousel`);
+        if (carouselElement) {
+            carouselElement.addEventListener('mouseenter', () => {
+                clearInterval(carousels[carouselType].interval);
+            });
+            
+            carouselElement.addEventListener('mouseleave', () => {
+                resetInterval(carouselType);
+            });
+        }
+    });
 }); 
