@@ -987,13 +987,13 @@ body {
     }
     
     .single-phone-carousel {
-        gap: 8px;
+        gap: 3px;
     }
     
     .toggle-container {
         padding: 10px 16px;
         gap: 12px;
-        margin-top: 0;
+        margin-top: -5px;
     }
     
     .toggle-label {
@@ -1045,13 +1045,13 @@ body {
     }
     
     .single-phone-carousel {
-        gap: 5px;
+        gap: 2px;
     }
     
     .toggle-container {
         padding: 8px 12px;
         gap: 10px;
-        margin-top: 0;
+        margin-top: -3px;
     }
     
     .toggle-label {
