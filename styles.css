@@ -114,6 +114,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     text-align: left;
+    padding-left: 20px;
 }
 
 .hero-content h1 {
@@ -123,6 +124,7 @@ body {
     line-height: 1.2;
     animation: fadeInUp 1s ease-out;
     text-align: left;
+    margin-left: 0;
 }
 
 .hero-subtitle {
@@ -132,6 +134,7 @@ body {
     line-height: 1.6;
     animation: fadeInUp 1s ease-out 0.2s both;
     text-align: left;
+    margin-left: 0;
 }
 
 .hero-buttons {
@@ -140,6 +143,7 @@ body {
     flex-wrap: wrap;
     animation: fadeInUp 1s ease-out 0.4s both;
     justify-content: flex-start;
+    margin-left: 0;
 }
 
 .btn {
