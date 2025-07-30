@@ -211,6 +211,15 @@ body {
     align-items: center;
     color: white;
     font-weight: 600;
+    padding: 0 10px;
+}
+
+.nav-bar span {
+    margin-right: 5px;
+}
+
+.nav-bar i {
+    font-size: 14px;
 }
 
 .map-container {
