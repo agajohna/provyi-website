@@ -222,6 +222,12 @@ body {
     font-size: 14px;
 }
 
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
 .map-container {
     flex: 1;
     background: url('11.jpg') center/cover, #f0f0f0;
