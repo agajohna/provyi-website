@@ -330,32 +330,23 @@ window.addEventListener('load', () => {
 
 // Single Phone Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab functionality
-    const tabButtons = document.querySelectorAll('.tab-button');
+    // Toggle functionality
+    const modeToggle = document.getElementById('mode-toggle');
     const requesterCarousel = document.getElementById('requester-carousel');
     const spotterCarousel = document.getElementById('spotter-carousel');
     
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-            
-            // Remove active class from all buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            // Switch carousel visibility
-            if (targetTab === 'requester') {
-                requesterCarousel.style.display = 'block';
-                spotterCarousel.style.display = 'none';
-                resetCarousel('requester');
-            } else {
-                requesterCarousel.style.display = 'none';
-                spotterCarousel.style.display = 'block';
-                resetCarousel('spotter');
-            }
-        });
+    modeToggle.addEventListener('change', () => {
+        if (modeToggle.checked) {
+            // Switch to Spotters
+            requesterCarousel.style.display = 'none';
+            spotterCarousel.style.display = 'block';
+            resetCarousel('spotter');
+        } else {
+            // Switch to Requesters
+            requesterCarousel.style.display = 'block';
+            spotterCarousel.style.display = 'none';
+            resetCarousel('requester');
+        }
     });
 
     // Carousel configuration
@@ -424,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.interval = setInterval(() => nextSlide(carouselType), interval);
     }
 
-    // Function to reset carousel when switching tabs
+    // Function to reset carousel when switching modes
     function resetCarousel(carouselType) {
         showSlide(carouselType, 0);
         resetInterval(carouselType);
