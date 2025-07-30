@@ -328,26 +328,33 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 }); 
 
-// Tabbed Carousel Functionality
+// Single Phone Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+    const requesterCarousel = document.getElementById('requester-carousel');
+    const spotterCarousel = document.getElementById('spotter-carousel');
     
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
             
-            // Remove active class from all buttons and panes
+            // Remove active class from all buttons
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanes.forEach(pane => pane.classList.remove('active'));
             
-            // Add active class to clicked button and corresponding pane
+            // Add active class to clicked button
             button.classList.add('active');
-            document.getElementById(`${targetTab}-tab`).classList.add('active');
             
-            // Reset carousel for the newly active tab
-            resetCarousel(targetTab);
+            // Switch carousel visibility
+            if (targetTab === 'requester') {
+                requesterCarousel.style.display = 'block';
+                spotterCarousel.style.display = 'none';
+                resetCarousel('requester');
+            } else {
+                requesterCarousel.style.display = 'none';
+                spotterCarousel.style.display = 'block';
+                resetCarousel('spotter');
+            }
         });
     });
 
