@@ -328,8 +328,29 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 }); 
 
-// Dual Screenshot Carousel Functionality
+// Tabbed Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and panes
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding pane
+            button.classList.add('active');
+            document.getElementById(`${targetTab}-tab`).classList.add('active');
+            
+            // Reset carousel for the newly active tab
+            resetCarousel(targetTab);
+        });
+    });
+
     // Carousel configuration
     const carousels = {
         requester: {
@@ -396,10 +417,14 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.interval = setInterval(() => nextSlide(carouselType), interval);
     }
 
-    // Start auto-play for both carousels
-    Object.keys(carousels).forEach(carouselType => {
+    // Function to reset carousel when switching tabs
+    function resetCarousel(carouselType) {
+        showSlide(carouselType, 0);
         resetInterval(carouselType);
-    });
+    }
+
+    // Start auto-play for the active carousel (requester by default)
+    resetInterval('requester');
 
     // Pause auto-play on hover for both carousels
     Object.keys(carousels).forEach(carouselType => {
