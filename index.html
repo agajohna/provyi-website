@@ -60,28 +60,63 @@
                         </div>
                     </div>
                     <div class="map-container">
+                        <!-- Map Background -->
+                        <div class="map-background">
+                            <div class="map-roads"></div>
+                            <div class="map-buildings"></div>
+                            <div class="map-water"></div>
+                            <div class="map-greenspace"></div>
+                        </div>
+                        
+                        <!-- Search Bar -->
                         <div class="search-bar">
                             <i class="fas fa-search"></i>
                             <span>Search for location...</span>
                         </div>
+                        
+                        <!-- Action Buttons -->
                         <div class="action-buttons">
                             <button class="btn-search">Search</button>
                             <button class="btn-camera"><i class="fas fa-camera"></i></button>
                         </div>
+                        
+                        <!-- Task Buttons -->
                         <div class="task-buttons">
-                            <button class="btn-drag">Drag to move pin</button>
-                            <button class="btn-tasks">All Tasks: 2 ></button>
+                            <button class="btn-drag">Position map & tap camera</button>
+                            <button class="btn-tasks">All Tasks: 3 ></button>
                         </div>
+                        
+                        <!-- Map Pins -->
                         <div class="map-pin pin-1 available">
                             <i class="fas fa-camera"></i>
                             <div class="pin-label">Available</div>
+                            <div class="pin-address">9936 Glenoaks Blvd</div>
                         </div>
                         <div class="map-pin pin-2 assigned">
                             <i class="fas fa-video"></i>
                             <div class="pin-label">Assigned</div>
+                            <div class="pin-address">11554 Sheldon St</div>
                         </div>
                         <div class="map-pin pin-3 current">
                             <i class="fas fa-user"></i>
+                            <div class="pin-label">You</div>
+                            <div class="pin-address">9840 Glenoaks Blvd</div>
+                        </div>
+                        
+                        <!-- POI Markers -->
+                        <div class="poi-marker poi-1">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Prime Building Materials</span>
+                        </div>
+                        <div class="poi-marker poi-2">
+                            <i class="fas fa-car"></i>
+                            <span>J & M Wholesale Tires</span>
+                        </div>
+                        
+                        <!-- Floating Action Buttons -->
+                        <div class="floating-actions">
+                            <button class="fab-settings"><i class="fas fa-cog"></i></button>
+                            <button class="fab-location"><i class="fas fa-location-arrow"></i></button>
                         </div>
                     </div>
                 </div>
