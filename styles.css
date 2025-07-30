@@ -90,50 +90,84 @@ body {
 
 /* Hero Section */
 .hero {
+    padding: 120px 0 80px;
     background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
-    padding: 80px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-.hero .container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
+.hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.hero-text {
-    flex: 1;
-    max-width: 500px;
-}
-
-.hero-text h1 {
+.hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.6;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
-.hero-visual {
-    flex: 1;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #ff6b35;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -850,18 +884,20 @@ body {
         left: 0;
     }
 
-    .hero .container {
-        flex-direction: column;
+    .hero-container {
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
+        gap: 2rem;
+        width: 100%;
+        max-width: 100%;
     }
     
-    .hero-text h1 {
+    .hero-content h1 {
         font-size: 2.5rem;
     }
     
-    .hero-text p {
-        font-size: 1.1rem;
+    .hero-buttons {
+        justify-content: center;
     }
     
     .dual-carousel {
@@ -942,8 +978,12 @@ body {
         padding: 60px 0;
     }
     
-    .hero-text h1 {
+    .hero-content h1 {
         font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .dual-carousel {
@@ -958,7 +998,7 @@ body {
     .carousel-title {
         font-size: 1rem;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
