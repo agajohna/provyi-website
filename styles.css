@@ -211,14 +211,9 @@ body {
 
 .map-container {
     flex: 1;
-    background: 
-        linear-gradient(90deg, #e8e8e8 0%, #e8e8e8 2%, transparent 2%, transparent 98%, #e8e8e8 98%, #e8e8e8 100%),
-        linear-gradient(0deg, #e8e8e8 0%, #e8e8e8 2%, transparent 2%, transparent 98%, #e8e8e8 98%, #e8e8e8 100%),
-        linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%),
-        linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%),
-        #f8f9fa;
-    background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px, 100% 100%;
-    background-position: 0 0, 0 0, 0 0, 10px 10px, 0 0;
+    background: linear-gradient(90deg, #e8e8e8 1px, transparent 1px), linear-gradient(0deg, #e8e8e8 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-color: #f8f9fa;
     position: relative;
     height: calc(100% - 60px);
     overflow: hidden;
