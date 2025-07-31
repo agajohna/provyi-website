@@ -81,10 +81,23 @@ style.textContent = `
             overflow: hidden;
             border-right: 3px solid white;
             white-space: nowrap;
+            width: 0;
             animation: 
-                typing 3s steps(40, end),
+                typing 3s steps(40, end) forwards,
                 blink-caret 0.75s step-end infinite;
-            animation-fill-mode: forwards;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            width: 0;
+            font-size: 1.8rem;
+            animation: 
+                typing 3s steps(40, end) forwards,
+                blink-caret 0.75s step-end infinite;
         }
     }
 `;
