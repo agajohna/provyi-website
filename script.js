@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (only for internal links)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -40,54 +40,6 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('loaded');
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.feature-card, .workflow-step, .pricing-card, .technical-card, .interface-card');
-    animatedElements.forEach(el => {
-        el.classList.add('loading');
-        observer.observe(el);
-    });
-});
-
-// Add loading animation to elements as they come into view
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.loading');
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-            element.classList.add('loaded');
-        }
-    });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-
-// Phone mockup animation
-const phoneMockup = document.querySelector('.phone-mockup');
-if (phoneMockup) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        phoneMockup.style.transform = `translateY(${rate}px)`;
-    });
-}
 
 // Map pins animation
 const mapPins = document.querySelectorAll('.map-pin');
@@ -138,107 +90,6 @@ featureCards.forEach(card => {
     card.addEventListener('mouseleave', () => {
         const icon = card.querySelector('.feature-icon');
         icon.style.transform = '';
-    });
-});
-
-// Download button click handler
-const downloadButtons = document.querySelectorAll('.btn-primary');
-downloadButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        // Add your App Store link here
-        // e.preventDefault();
-        // window.open('YOUR_APP_STORE_LINK', '_blank');
-        
-        // For now, just show a message
-        if (button.textContent.includes('Download')) {
-            e.preventDefault();
-            alert('App Store link will be added when the app is published!');
-        }
-    });
-});
-
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Add typing effect to hero title
-const heroTitle = document.querySelector('.hero-content h1');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    };
-    
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 500);
-}
-
-// Add counter animation for pricing
-const animateCounter = (element, target, duration = 2000) => {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start);
-        }
-    }, 16);
-};
-
-// Observe pricing cards for counter animation
-const pricingObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const priceElement = entry.target.querySelector('.price');
-            if (priceElement) {
-                const priceText = priceElement.textContent;
-                const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
-                if (!isNaN(price)) {
-                    priceElement.textContent = '$0';
-                    setTimeout(() => {
-                        animateCounter(priceElement, price, 1500);
-                    }, 500);
-                }
-            }
-            pricingObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.pricing-card').forEach(card => {
-    pricingObserver.observe(card);
-});
-
-// Add loading state to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function() {
-        if (this.classList.contains('btn-primary')) {
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            this.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                this.innerHTML = originalText;
-                this.style.pointerEvents = '';
-            }, 2000);
-        }
     });
 });
 
@@ -319,12 +170,8 @@ const createBackToTop = () => {
 
 createBackToTop();
 
-// Initialize all animations when page loads
+// Initialize page when loaded
 window.addEventListener('load', () => {
-    // Trigger initial animation check
-    animateOnScroll();
-    
-    // Add loaded class to body for CSS transitions
     document.body.classList.add('loaded');
 }); 
 
