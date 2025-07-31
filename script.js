@@ -47,7 +47,7 @@ mapPins.forEach((pin, index) => {
     pin.style.animation = `pulse 2s ease-in-out ${index * 0.5}s infinite`;
 });
 
-// Add CSS animation for map pins
+// Add CSS animation for map pins and typing effect
 const style = document.createElement('style');
 style.textContent = `
     @keyframes pulse {
@@ -62,6 +62,29 @@ style.textContent = `
         100% {
             transform: scale(1);
             opacity: 1;
+        }
+    }
+    
+    /* Typing effect for mobile */
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: white; }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: 
+                typing 3s steps(40, end),
+                blink-caret 0.75s step-end infinite;
+            animation-fill-mode: forwards;
         }
     }
 `;
