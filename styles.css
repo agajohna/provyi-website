@@ -63,6 +63,12 @@ body {
     margin-left: 0.5rem;
 }
 
+.logo-image {
+    height: 2rem;
+    width: auto;
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
