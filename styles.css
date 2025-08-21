@@ -146,11 +146,21 @@ body {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: 0.9;
     line-height: 1.6;
     text-align: left;
     margin-left: 0;
+}
+
+.hero-punchline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ff6b35;
+    text-align: left;
+    margin-left: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
