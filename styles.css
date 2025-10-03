@@ -214,6 +214,17 @@ body {
     margin-right: 0.5rem;
 }
 
+/* Google Play Store Button Styling */
+.btn.google-play {
+    background: #01875f;
+}
+
+.btn.google-play:hover {
+    background: #016b4a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(1, 135, 95, 0.3);
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
